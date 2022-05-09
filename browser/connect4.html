@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Connect4</title>
+    <meta content="text/html; charset=utf-8"
+        http-equiv="content-type">
+    <link href="connect4.css"
+        rel="stylesheet"
+        type="text/css">
+</head>
+<body>
+<h1>Connect4</h1>
+
+<!-- Player name input -->
+<p>Enter player names in the fields, then click "Submit" to submit the form:</p>
+
+<form id="frm1" action="/action_page.php">
+    Player 1 (🔴): <input type="text" input id="redP" name="redPlayer" placeholder="redPlayer"><br>
+    Player 2 (🟡): <input type="text" input id="yellowP" name="yellowPlayer" placeholder="yellowPlayer"><br>
+    <input type="button" onclick="handlePlayerNames()" value="Submit"><br>
+    <p id="nextPlayerUp">Next turn: 🟡</p>
+</form>
+<!-- input type="button" -->
+<!-- <script>
+function handlePlayerNames() {
+    console.log("handlePlayerNames was called")
+    let redPlayer = document.getElementById("redP").value
+    let yellowPlayer = document.getElementById("yellowP").value
+    if (redPlayer === "") {
+        redPlayer = "redPlayer"
+    }
+    if (yellowPlayer ==="") {
+        yellowPlayer = "yellowPlayer"
+    }
+    alert("Ready to play: " + redPlayer + " and " + yellowPlayer +"!")
+}
+</script> -->
+<!-- End Player name input -->
+
+<!-- Winner Display and Grid -->
+<p id="winner-display">The winner is <span id="winner-name"></span></p>
+<div id="grid">
+    <div class="row"
+        id="row-0">
+        <!-- Mark said to add column0 name below -->
+        <div class="column" 
+        id="row-0-column-0"></div>
+        <div class="column"
+        id="row-0-column-1"></div>
+        <div class="column"
+        id="row-0-column-2"></div>
+        <div class="column"
+        id="row-0-column-3"></div>
+        <div class="column"
+        id="row-0-column-4"></div>
+        <div class="column"
+        id="row-0-column-5"></div>
+        <div class="column"
+        id="row-0-column-6"></div>
+    </div>
+
+    <div class="row"
+        id="row-1">
+        <div class="column"
+        id="row-1-column-0"></div>
+        <div class="column"
+        id="row-1-column-1"></div>
+        <div class="column"
+        id="row-1-column-2"></div>
+        <div class="column"
+        id="row-1-column-3"></div>
+        <div class="column"
+        id="row-1-column-4"></div>
+        <div class="column"
+        id="row-1-column-5"></div>
+        <div class="column"
+        id="row-1-column-6"></div>
+    </div>
+
+
+    <div class="row"
+        id="row-2">
+        <div class="column"
+        id="row-2-column-0"></div>
+        <div class="column"
+        id="row-2-column-1"></div>
+        <div class="column"
+        id="row-2-column-2"></div>
+        <div class="column"
+        id="row-2-column-3"></div>
+        <div class="column"
+        id="row-2-column-4"></div>
+        <div class="column"
+        id="row-2-column-5"></div>
+        <div class="column"
+        id="row-2-column-6"></div>
+    </div>
+
+    <div class="row"
+        id="row-3">
+        <div class="column"
+        id="row-3-column-0"></div>
+        <div class="column"
+        id="row-3-column-1"></div>
+        <div class="column"
+        id="row-3-column-2"></div>
+        <div class="column"
+        id="row-3-column-3"></div>
+        <div class="column"
+        id="row-3-column-4"></div>
+        <div class="column"
+        id="row-3-column-5"></div>
+        <div class="column"
+        id="row-3-column-6"></div>
+    </div>
+
+    <div class="row"
+        id="row-4">
+        <div class="column"
+        id="row-4-column-0"></div>
+        <div class="column"
+        id="row-4-column-1"></div>
+        <div class="column"
+        id="row-4-column-2"></div>
+        <div class="column"
+        id="row-4-column-3"></div>
+        <div class="column"
+        id="row-4-column-4"></div>
+        <div class="column"
+        id="row-4-column-5"></div>
+        <div class="column"
+        id="row-4-column-6"></div>
+    </div>
+
+    <div class="row"
+        id="row-5">
+        <div class="column"
+        id="row-5-column-0"></div>
+        <div class="column"
+        id="row-5-column-1"></div>
+        <div class="column"
+        id="row-5-column-2"></div>
+        <div class="column"
+        id="row-5-column-3"></div>
+        <div class="column"
+        id="row-5-column-4"></div>
+        <div class="column"
+        id="row-5-column-5"></div>
+        <div class="column"
+        id="row-5-column-6"></div>
+    </div>
+
+</div>
+<button id="reset-button">Reset</button>
+    <p>Remember to open your dev tools by pressing F12 to view log messages and errors!</p>
+    <script src="logic.js"
+    type="text/javascript"></script> 
+<script src="interaction.js"
+    type="text/javascript"></script>
+<!-- <script src="test-playername.js"
+    type="text/javascript"></script> -->
+</body>
+</html>
