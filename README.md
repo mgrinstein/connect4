@@ -1,7 +1,8 @@
 # Connect4
-RESTful API with Node.js and Express to play a Connect4 game. <br>
-Repo also contains a previous version of the game (not structured as client-server). <br>
+RESTful API with Node.js and Express to play a Connect4 game. Repo also contains a previous version of the game (not structured as client-server). <br>
 Built with HTML, CSS, and JavaScript. <br>
+
+![gameplay gif](https://github.com/ferreiramonique/connect4/blob/main/media/connect4game.gif)
 
 ## Main features developed
 
@@ -18,7 +19,7 @@ Built with HTML, CSS, and JavaScript. <br>
 ## Client-Server 
 RESTful API with NodeJS using Express.
 
-### First set up
+### First set up (already performed)
 1. Set up npm package (generate _package.json_): <br>
 `npm init` _(input values or accept default)_
 
