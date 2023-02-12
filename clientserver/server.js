@@ -1,10 +1,11 @@
 console.log('Server-side code running');
 
+const path = require('path');
 const express = require('express')
+
 const app = express()
 app.use(express.json())
 
-const path = require('path');
 const { resetGame, takeTurn, checkWinner } = require('./logic.js');
 
 const PORT = 8080

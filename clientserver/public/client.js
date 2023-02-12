@@ -61,20 +61,6 @@ async function postData(url, data = {}) {
     return response.json()
 }
 
-// function positionClick(rowIndex, columnIndex, event) {
-//     const clickedPosition = {
-//         row : rowIndex,
-//         column : columnIndex
-//     }
-//     console.log("positionClick event")
-//     console.log(clickedPosition)
-//     postData('/connect4',clickedPosition).then(data => {
-//         console.log("postData")
-//         console.log(data)
-//         drawBoard(data.currentBoard)
-//     })
-// }
-
 function positionClick(rowIndex, columnIndex, event) {
     const clickedPosition = {
         row : rowIndex,
