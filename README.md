@@ -1,18 +1,19 @@
 # Connect4
-Connect4 game on a client-server structure with Node.js using Express. 
-Also contains previous local developments.
+RESTful API with Node.js and Express to play a Connect4 game.
+Repo also contains a previous version of the game (not structured as client-server).
+Built with HTML, CSS, and JavaScript.
 
 ## Features developed
 
-| Feature                          | Local       | Client-Server |
+| Feature                          | Client-Server |     Local |
 | ---------------------------------| ----------- | ------------- |
 | Place pieces on Connect 4 grid   |       ✓     |        ✓     |
 | Respond to click events          |       ✓     |        ✓     |
 ! Detect victory conditions        |       ✓     |        ✓     |
 | Display victory conditions       |       ✓     |        ✓     |
 | Display winner                   |       ✓     |        ✓     |
-| Add Player names and declare the winner |       ✓   |   ✓     |
-| Unit testing                     |       ✓     |              |
+| Add Player names and declare the winner |  ✓   |        ✓     |
+| Unit testing                     |             |        ✓     |
 
 ## Client-Server 
 RESTful API with NodeJS using Express.
@@ -35,9 +36,5 @@ Expected output: "Express server up on port: 8080"
 2. [client - positionClick] Client click action will POST row & column;
 3. [server - taketurn] Server responds with json containing the game’s updated state.
 
-
 ## External links
 [Wikipedia - Connect Four](https://en.wikipedia.org/wiki/Connect_Four)
-  
- 
-
