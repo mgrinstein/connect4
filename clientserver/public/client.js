@@ -67,7 +67,7 @@ function positionClick(rowIndex, columnIndex, event) {
         column : columnIndex
     }
     console.log("positionClick event")
-    postData('/connect4',clickedPosition).then(data => {
+    postData('/',clickedPosition).then(data => {
         console.log("postData")
         console.log(data)
         drawBoard(data.currentBoard)

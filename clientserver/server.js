@@ -13,16 +13,16 @@ const PORT = 8080
 // serve files from the public directory
 app.use(express.static('public'));
 
-app.get('/', (req, res) => {
-    res.send('Hello World!')
-})
+// app.get('/', (req, res) => {
+//     res.send('Hello World!')
+// })
 
-app.get('/connect4', (req, res) => {
+app.get('/', (req, res) => {
     res.sendFile(__dirname + '/public/index.html');
 });
 
-app.post('/connect4', (req, res) => {
-    console.log('SERVER: /connect4 called')
+app.post('/', (req, res) => {
+    console.log('SERVER: / called')
     const bodyInfo = req.body
     let clickedRow = bodyInfo.row
     let clickedColumn = bodyInfo.column
