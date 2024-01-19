@@ -19,22 +19,20 @@ Built with Node.js using the Express framework, JavaScript, HTML and CSS. <br>
 ## Client-Server 
 RESTful API with NodeJS using Express.
 
-### First set up (already performed)
-1. Set up npm package (generate _package.json_): <br>
-`npm init` _(input values or accept default)_
-
-2. Install packages (generate _package-lock.json_): <br>
-`npm install`
-
-### Launch server from command line \& start playing
+### Install packages (generate _package-lock.json_): <br>
 1. Access project's subdirectory: <br>
 `cd clientserver/`
 
-2. Start server: <br>
+2. Install packages
+`npm install`
+
+### Launch server from command line \& start playing
+
+3. Start server: <br>
 `npm start` _(npm will run `node server.js`)_ <br>
 Expected output: "Express server up on port: 8080"
 
-3. On browser, go to `http://localhost:8080/connect4`
+4. On browser, go to `http://localhost:8080/connect4`
 
 ### Logic behind takeTurn interaction
 1. [client - grid] EventListener on board grid (listens to "click"); 
