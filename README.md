@@ -23,7 +23,7 @@ RESTful API with NodeJS using Express.
 1. Access project's subdirectory: <br>
 `cd clientserver/`
 
-2. Install packages
+2. Install packages: <br>
 `npm install`
 
 ### Launch server from command line \& start playing
