@@ -32,7 +32,7 @@ RESTful API with NodeJS using Express.
 `npm start` _(npm will run `node server.js`)_ <br>
 Expected output: "Express server up on port: 8080"
 
-4. On browser, go to `http://localhost:8080/connect4`
+4. On browser, go to `http://localhost:8080`
 
 ### Logic behind takeTurn interaction
 1. [client - grid] EventListener on board grid (listens to "click"); 
