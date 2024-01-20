@@ -2,7 +2,7 @@
 A Connect4 game as a RESTful API. Repo also contains a previous version of the game (not structured as Client-Server). <br>
 Built with Node.js using the Express framework, JavaScript, HTML and CSS. <br>
 
-![gameplay gif](https://github.com/ferreiramonique/connect4/blob/main/media/connect4game.gif)
+![gameplay gif](media/connect4game.gif)
 
 ## Main features developed
 
