@@ -1,12 +1,14 @@
 # Connect4
-A Connect4 game as a RESTful API. Repo also contains a previous version of the game (not structured as Client-Server). <br>
+A Connect4 game in two versions:
+- Static
+- RESTful API <br> <br>
+
 Built with Node.js using the Express framework, JavaScript, HTML and CSS. <br>
 
-![gameplay gif](media/connect4game.gif)
 
 ## Main features developed
 
-| Feature                          | Client-Server |     Local |
+| Feature                          | Client-Server |     Static |
 | ---------------------------------| ----------- | ------------- |
 | Place pieces on Connect 4 grid   |       ✓     |        ✓     |
 | Respond to click events          |       ✓     |        ✓     |
@@ -15,9 +17,13 @@ Built with Node.js using the Express framework, JavaScript, HTML and CSS. <br>
 | Display winner                   |       ✓     |        ✓     |
 | Add Player names and declare the winner |     |        ✓     |
 
+## Static version
+Hosted in Vercel: [connect4-static.vercel.app](https://connect4-static.vercel.app/)
 
-## Client-Server 
+## Client-Server version
 RESTful API with NodeJS using Express.
+
+![gameplay gif](media/connect4game.gif)
 
 ### Install packages (generate _package-lock.json_): <br>
 1. Access project's subdirectory: <br>
