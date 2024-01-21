@@ -13,7 +13,7 @@ for(let boardRow=0; boardRow<totalRows; boardRow++) {
 }
 
 // Player types:
-let redPlayer = "redPlayer" //"red"
+let redPlayer = "redPlayer"
 let yellowPlayer = "yellowPlayer"
 
 
@@ -52,6 +52,7 @@ function handlePlayerNames() {
         yellowPlayer = "yellowPlayer"
     }
     alert("Ready to play: " + redPlayer + " and " + yellowPlayer +"!")
+    toggleSubmitNamesButton()
     return redPlayer,yellowPlayer
 }
 
@@ -60,13 +61,8 @@ function handlePlayerNames() {
 function takeTurn(row, column) {
     const rowInfo = tokensLeftMatrix[column]
     console.log("takeTurn was called with row: "+row+", column:"+column)
-//    console.log("current player: " +nextPlayer)
-//    console.log("current tokens: " +tokensLeftMatrix)
-
 
     if ((isGameOver === false) && (tokensLeftMatrix[column] >= 0)) {
-        //console.log("rowInfo "+rowInfo)
-        //console.log("columnInfo "+column)
         if (nextPlayer === yellowPlayer) { // Update board with new move & whose turn it is now
             myBoard[rowInfo][column] = "yellow"
             lastPlayer = yellowPlayer
@@ -85,6 +81,80 @@ function takeTurn(row, column) {
     // console.log("myBoard[rowInfo] "+myBoard[rowInfo])
 // PS: No need to call checkWinner because it will already be called by the positionClick function (on interaction.js) 
 }
+
+
+// Main checkWinner function
+// Returns either "redPlayer", "yellowPlayer" or "nobody" if the game is over.
+// Otherwise return null to continue playing.
+
+function checkWinner() {
+    console.log("checkWinner was called")
+    if (checkWinnerHorizontal(myBoard) ||
+        checkWinnerVertical(myBoard) ||
+        checkWinnerDiagonalsLR(myBoard) ||
+        checkWinnerDiagonalsRL(myBoard)) {
+            isGameOver = true
+            console.log("got a winner")
+            nextPlayerUp.innerText = "Press 'Reset' to restart.";
+            return lastPlayer
+        }
+    else if (!spacesLeft(myBoard)) {
+        isGameOver = true
+        console.log("no winner")
+        nextPlayerUp.innerText = "Press 'Reset' to restart."
+        return "nobody"
+    }
+    else {
+        console.log("game still going on")
+        return null
+    }
+}
+
+
+// Set the game state back to its original state to play another game.
+function resetGame() {
+    console.log("resetGame was called");
+    for (let rowClear = 0; rowClear < totalRows; rowClear++) {
+        for (let columnClear =0; columnClear < totalCols; columnClear++) {
+            myBoard[rowClear][columnClear] = null
+            document.getElementById(`row-${rowClear}-column-${columnClear}`).style.backgroundColor = ""
+        }
+    }
+    // set first player to "yellowPlayer" player
+    nextPlayer = yellowPlayer
+    // set new game
+    isGameOver = false
+    populateTokenMatrix(tokensLeftMatrix)
+    toggleSubmitNamesButton()
+}
+
+// Return the current board state with either a "red" or a "yellow" in
+// each position. Put a null in a position that hasn't been played yet.
+function getBoard() {
+    console.log("getBoard was called");
+    return myBoard;
+}
+
+function spacesLeft(board) {
+    //console.log("board[0] : " + board[0])
+    if (board[0].some(el => el === null) === true) {
+        return true
+    } else {
+        return false
+    }
+}
+
+function toggleSubmitNamesButton() {
+    let element = document.getElementById("submitNamesButton");
+    let hidden = element.getAttribute("hidden");
+    
+    if (hidden) {
+    element.removeAttribute("hidden");
+    } else {
+        element.setAttribute("hidden", "hidden");
+    }
+}
+
 
 function checkWinnerHorizontal(board) {
     console.log("checkWinnerHorizontal was called")
@@ -178,66 +248,6 @@ function checkWinnerDiagonalsRL(board) {
             }
         }    
     }
-}
-
-function spacesLeft(board) {
-    //console.log("board[0] : " + board[0])
-    if (board[0].some(el => el === null) === true) {
-        return true
-    } else {
-        return false
-    }
-}
-
-// Main checkWinner function
-// Returns either "redPlayer", "yellowPlayer" or "nobody" if the game is over.
-// Otherwise return null to continue playing.
-
-function checkWinner() {
-    console.log("checkWinner was called")
-    if (checkWinnerHorizontal(myBoard) ||
-        checkWinnerVertical(myBoard) ||
-        checkWinnerDiagonalsLR(myBoard) ||
-        checkWinnerDiagonalsRL(myBoard)) {
-            isGameOver = true
-            console.log("got a winner")
-            nextPlayerUp.innerText = "Press 'Reset' to restart.";
-            return lastPlayer
-        }
-    else if (!spacesLeft(myBoard)) {
-        isGameOver = true
-        console.log("no winner")
-        nextPlayerUp.innerText = "Press 'Reset' to restart."
-        return "nobody"
-    }
-    else {
-        console.log("game still going on")
-        return null
-    }
-}
-
-
-// Set the game state back to its original state to play another game.
-function resetGame() {
-    console.log("resetGame was called");
-    for (let rowClear = 0; rowClear < totalRows; rowClear++) {
-        for (let columnClear =0; columnClear < totalCols; columnClear++) {
-            myBoard[rowClear][columnClear] = null
-            document.getElementById(`row-${rowClear}-column-${columnClear}`).style.backgroundColor = ""
-        }
-    }
-    // set first player to "yellowPlayer" player
-    nextPlayer = yellowPlayer
-    // set new game
-    isGameOver = false
-    populateTokenMatrix(tokensLeftMatrix)
-}
-
-// Return the current board state with either a "red" or a "yellow" in
-// each position. Put a null in a position that hasn't been played yet.
-function getBoard() {
-    console.log("getBoard was called");
-    return myBoard;
 }
 
 if (typeof exports === 'object') {
